@@ -1,0 +1,74 @@
+@startuml r4
+
+object "Panamericano : Juego" as Juego {
+    localidad : Chile
+    puntacion : 2-1
+}
+
+object "Eq1 : Equipo" as t1 {
+    nombre : Venezuela
+    registro : VEN111
+}
+object "Eq2 : Equipo" as t2 {
+    nombre : Colombia
+    registro : COL111
+}
+
+object "E1 : Entrenador" as ev {
+    nombre : Gabriel Pérez
+    teléfono : +58 ***
+    dirección : Caracas
+    nivelAcreditación : Profesional
+    añosExperiencia : 12
+}
+object "C1 : Capitan" as cv {
+    nombre : Alejandro Fernández
+    teléfono : +58 ***
+    dirección : Caracas
+    número : 7
+    posición : Colocador
+}
+object "J1 : Jugador" as jv {
+    nombre : Lucas Martínez
+    teléfono : +58 ***
+    dirección : Caracas
+    número : 3
+    posición : Libero
+}
+
+object "E2 : Entrenador" as ec {
+    nombre : Diego Torres
+    teléfono : +57 ***
+    dirección : Bogotá
+    nivelAcreditación : Avanzado
+    añosExperiencia : 7
+}
+object "C2 : Capitan" as cc {
+    nombre : Andrés González
+    teléfono : +57 ***
+    dirección : Bogotá 
+    número : 10
+    posición : Centro
+}
+object "J2 : Jugador" as jc {
+    nombre : Daniel Rojas
+    teléfono : +57 ***
+    dirección : Bogotá 
+    número : 11
+    posición : Colocador
+}
+
+
+Juego -- t1 : Compite <
+Juego -- t2 : Compite <
+
+t1 *-- ev
+t1 *-- cv
+t1 *-- jv
+
+t2 *-- ec
+t2 *-- cc
+t2 *-- jc
+
+
+@enduml

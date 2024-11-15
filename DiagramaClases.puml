@@ -1,0 +1,39 @@
+@startuml R4
+
+class Persona {
+    nombre : String
+    teléfono : String
+    dirección : String
+}
+class Jugador {
+    número : Integer
+    posición : Integer
+}
+class Capitan 
+class Entrenador {
+    nivelAcreditación : String
+    añosExperiencia : Integer
+}
+class Equipo {
+    nombre : String
+    registro : String
+}
+class Juego {
+    localidad : String
+    puntuacion : String
+}
+
+Persona <|-- Jugador
+Persona <|-- Capitan
+Capitan --|> Jugador
+Persona <|-- Entrenador
+
+Equipo *-- "5-19" Jugador
+Equipo *-- "1" Capitan
+
+Equipo *--  "1" Entrenador
+Entrenador "1" -- "1..many" Equipo : Entrena >
+
+Equipo "2" -- Juego : compiten en >
+
+@enduml
